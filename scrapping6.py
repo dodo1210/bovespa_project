@@ -21,8 +21,8 @@ options.add_argument("--disable-gpu")
 
 s = ''
 data = []
-#f = open("dados_vvar_02-01.csv", "w")
-
+f = open("dados_vvar_02-01.csv", "a")
+#f.write("Indice_de_Força_Relativa;Estocastico_%K;Indice_do_canal_de_commodities;Indice_Direcional_Medio;Oscilador_extraordinario;Momentum;NIvel_MACD;IFR_Estocastico_Rapido;Range_Percentual_de_Williams;Força_Bull_Bear;Oscilador_Definitivo;Status\n")
 
 def main():
     driver = webdriver.Chrome(chrome_options=options,executable_path='/home/doara/Documentos/uns_codigos/Python/bovespa_project/chromedriver_linux64/chromedriver')
@@ -54,7 +54,7 @@ def main():
             data.append(c[len(c)-1])
 
     data.append(s)
-    #f.write(str(data[1]+';'+data[2]+';'+data[3]+';'+data[4]+';'+data[5]+';'+data[6]+';'+data[7]+';'+data[8]+';'+data[9]+';'+data[10]+';'+data[11])+'\n')
+    f.write(str(data[1]+';'+data[2]+';'+data[3]+';'+data[4]+';'+data[5]+';'+data[6]+';'+data[7]+';'+data[8]+';'+data[9]+';'+data[10]+';'+data[11])+'\n')
     print(data[1]+';'+data[2]+';'+data[3]+';'+data[4]+';'+data[5]+';'+data[6]+';'+data[7]+';'+data[8]+';'+data[9]+';'+data[10]+';'+data[11])
     v = ""
     cut1 = []

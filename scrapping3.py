@@ -21,12 +21,12 @@ options.add_argument("--disable-gpu")
 
 s = ''
 data = []
-#f = open("dados_vvar_02-01.csv", "w")
-
+f = open("dados_azul_02-01.csv", "a")
+#f.write("Indice_de_Força_Relativa;Estocastico_%K;Indice_do_canal_de_commodities;Indice_Direcional_Medio;Oscilador_extraordinario;Momentum;NIvel_MACD;IFR_Estocastico_Rapido;Range_Percentual_de_Williams;Força_Bull_Bear;Oscilador_Definitivo;Status\n")
 
 def main():
     driver = webdriver.Chrome(chrome_options=options,executable_path='/home/doara/Documentos/uns_codigos/Python/bovespa_project/chromedriver_linux64/chromedriver')
-    a = driver.get("https://br.tradingview.com/symbols/BMFBOVESPA-VVAR3/")
+    a = driver.get("https://br.tradingview.com/symbols/BMFBOVESPA-AZUL4/")
     content = driver.find_element_by_css_selector('div.tv-symbol-price-quote__value')
     s = content.text
     driver.find_element_by_css_selector('a.tv-feed-widget__title-link').click()
